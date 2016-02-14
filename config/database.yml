@@ -11,7 +11,9 @@
 #
 default: &default
   adapter: postgresql
+  encoding: unicode
   pool: 5
+  username: david
 
 development:
   <<: *default
@@ -27,7 +29,6 @@ test:
 production:
   <<: *default
   database: odot_production
-  username: odot
   password: <%= ENV['ODOT_DATABASE_PASSWORD'] %>
 
 # As with config/secrets.yml, you never want to store sensitive information,
